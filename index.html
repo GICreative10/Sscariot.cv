@@ -43,8 +43,6 @@ animation:bgMove 30s ease-in-out infinite alternate;
 100%{transform:scale(1.1);}
 }
 
-/* HEADER */
-
 header{
 padding:30px;
 text-align:center;
@@ -59,8 +57,6 @@ margin-bottom:10px;
 header h1{
 font-size:36px;
 }
-
-/* HERO */
 
 .hero{
 height:90vh;
@@ -106,8 +102,6 @@ color:#ff8c00;
 font-size:34px;
 }
 
-/* SERVIÇOS */
-
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -127,8 +121,6 @@ transform:translateY(-10px);
 background:#ff6a00;
 }
 
-/* MÁQUINAS */
-
 .machines{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -145,8 +137,6 @@ cursor:pointer;
 .machines img:hover{
 transform:scale(1.05);
 }
-
-/* GALERIA */
 
 .gallery{
 display:grid;
@@ -175,8 +165,6 @@ font-size:16px;
 color:#ccc;
 }
 
-/* LIGHTBOX */
-
 #lightbox{
 position:fixed;
 top:0;
@@ -194,8 +182,6 @@ z-index:9999;
 max-width:90%;
 max-height:90%;
 }
-
-/* CTA */
 
 .cta{
 background:
@@ -229,14 +215,7 @@ font-weight:bold;
 border-radius:8px;
 text-decoration:none;
 display:inline-block;
-transition:0.3s;
 }
-
-.btn-whatsapp:hover{
-transform:scale(1.08);
-}
-
-/* WHATSAPP */
 
 .whatsapp-float{
 position:fixed;
@@ -258,47 +237,11 @@ z-index:999;
 width:35px;
 }
 
-/* FOOTER */
-
 footer{
 background:#000;
 text-align:center;
 padding:30px;
 color:#aaa;
-}
-
-/* BOT IA */
-
-#chatButton{
-position:fixed;
-bottom:110px;
-right:25px;
-width:70px;
-height:70px;
-border-radius:50%;
-border:none;
-cursor:pointer;
-overflow:hidden;
-z-index:9999;
-}
-
-#chatButton img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-#chatFrame{
-position:fixed;
-bottom:190px;
-right:25px;
-width:360px;
-height:520px;
-border:none;
-border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-display:none;
-z-index:9999;
 }
 
 </style>
@@ -317,7 +260,20 @@ z-index:9999;
 
 </header>
 
-<!-- TODO SEU SITE CONTINUA IGUAL -->
+<section class="hero">
+<h2>Impressão Digital Profissional</h2>
+<p>Alta tecnologia em comunicação visual e impressão digital.</p>
+</section>
+
+<section>
+
+<h2>Sobre a Empresa</h2>
+
+<p style="max-width:800px;margin:auto;text-align:center">
+A SSCariot Comunicação Visual possui mais de 20 anos de experiência no mercado, oferecendo soluções completas em comunicação visual e impressão digital.
+</p>
+
+</section>
 
 <footer>
 SSCariot Comunicação Visual © 2026
@@ -331,30 +287,50 @@ target="_blank">
 
 </a>
 
-<!-- BOTÃO DA IA -->
-
-<button id="chatButton">
-<img src="https://i.postimg.cc/59Rx4ZTf/49E6F975-307C-4338-9FAE-AAA8F07B3140.png">
-</button>
-
-<!-- IA -->
-
-<iframe
-id="chatFrame"
-src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json">
-</iframe>
+<div id="lightbox">
+<img src="">
+</div>
 
 <script>
 
-const button=document.getElementById("chatButton");
-const chat=document.getElementById("chatFrame");
+const sections=document.querySelectorAll("section");
 
-button.addEventListener("click",()=>{
+window.addEventListener("scroll",()=>{
 
-chat.style.display =
-chat.style.display==="block"
-? "none"
-: "block";
+sections.forEach(sec=>{
+
+const top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+
+});
+
+});
+
+</script>
+
+<!-- SUA IA -->
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+
+<script>
+
+window.botpressWebChat.init({
+
+configUrl:"https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json",
+
+botName:"Assistente SSCariot",
+
+botAvatar:"https://i.postimg.cc/59Rx4ZTf/49E6F975-307C-4338-9FAE-AAA8F07B3140.png",
+
+stylesheet:`
+#bp-web-widget-container{
+bottom:100px !important;
+right:20px !important;
+}
+`
 
 });
 
