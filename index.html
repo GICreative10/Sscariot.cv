@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SSCariot Comunicação Visual</title>
+<title>SSCCARIOT COMINICAÇÃO VISUAL</title>
 
 <style>
 
@@ -455,7 +455,9 @@ lightbox.style.display="none";
 });
 
 </script>
-  <!-- IA ATENDIMENTO AUTOMÁTICO -->
+  <!-- BOTÃO IA -->
+
+<div id="ai-button">🤖</div>
 
 <div id="ai-chat">
 <iframe 
@@ -467,14 +469,52 @@ style="border:none;border-radius:10px;">
 </div>
 
 <style>
-#ai-chat{
+
+#ai-button{
 position:fixed;
 bottom:100px;
 right:25px;
+width:60px;
+height:60px;
+background:#ff8c00;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
 z-index:9999;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
+
+#ai-chat{
+position:fixed;
+bottom:170px;
+right:25px;
+display:none;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
 </style>
+
+<script>
+
+const aiButton = document.getElementById("ai-button");
+const aiChat = document.getElementById("ai-chat");
+
+aiButton.onclick = () => {
+
+if(aiChat.style.display === "none"){
+aiChat.style.display = "block";
+}else{
+aiChat.style.display = "none";
+}
+
+}
+
+</script>
 
 </body>
 </html>
