@@ -281,7 +281,7 @@ color:#aaa;
 
 <img class="logo" src="https://i.postimg.cc/3RhdH5sN/C314B943-92C1-41C2-918C-1029B8B4A014.png">
 
-<h1>SSCARIOT COMUNICAÇÃO VISUAL</h1>
+<h1>SSCariot Comunicação Visual</h1>
 
 </header>
 
@@ -290,27 +290,191 @@ color:#aaa;
 <p>Alta tecnologia em comunicação visual e impressão digital.</p>
 </section>
 
-<!-- TODO O RESTO DO SEU SITE CONTINUA IGUAL -->
+<section>
+
+<h2>Sobre a Empresa</h2>
+
+<p style="max-width:800px;margin:auto;text-align:center">
+A SSCariot Comunicação Visual possui mais de 20 anos de experiência no mercado, oferecendo soluções completas em comunicação visual e impressão digital. Trabalhamos com máquinas de impressão de última geração, garantindo alta definição, cores vibrantes e acabamento profissional em cada projeto. Nosso compromisso é transformar ideias em resultados visuais de alto impacto, sempre com qualidade, tecnologia e confiança.
+</p>
+
+</section>
+
+<section>
+
+<h2>Nossos Serviços</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Lonas</h3>
+<p>Impressão de lonas em grande formato.</p>
+</div>
+
+<div class="card">
+<h3>Adesivos</h3>
+<p>Adesivos personalizados e recorte eletrônico.</p>
+</div>
+
+<div class="card">
+<h3>ACM</h3>
+<p>Fachadas modernas em ACM.</p>
+</div>
+
+<div class="card">
+<h3>PVC</h3>
+<p>Placas rígidas para comunicação visual.</p>
+</div>
+
+<div class="card">
+<h3>Chapas de Aço</h3>
+<p>Estruturas e painéis metálicos.</p>
+</div>
+
+<div class="card">
+<h3>Outdoor</h3>
+<p>Produção e instalação de outdoors.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Tecnologia de Impressão</h2>
+
+<div class="machines">
+
+<img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+
+<img src="https://i.postimg.cc/SKpRbb8q/IMG-3090.jpg">
+<img src="https://i.postimg.cc/ncBtbj11/IMG-3088.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Galeria de Trabalhos</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/V6Vb8b41/0185f1a7-367e-45b3-8d37-41a49d3fec89.jpg">
+<p>Projeto Antônio do Amaral</p>
+</div>
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/KzHg2gQG/91084935-255b-4fc8-92de-6884f6f90134.jpg">
+<p>Projeto Emagrecimento</p>
+<p>Projeto Emagrecentro</p>
+</div>
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/C1QfgfJM/e9e241b6-3193-4a10-92a2-8b26c7d57c91.jpg">
+<p>Projeto Sicoob</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Solicite Seu Orçamento</h2>
+
+<p>
+Entre em contato agora e receba um orçamento rápido
+para projetos de comunicação visual e impressão digital.
+</p>
+
+<a class="btn-whatsapp"
+href="https://wa.me/5511999999999"
+target="_blank">
+
+FALAR NO WHATSAPP
+
+</a>
+
+</section>
 
 <footer>
 SSCariot Comunicação Visual © 2026
 </footer>
 
-<!-- BOT IA -->
+<a class="whatsapp-float"
+href="https://wa.me/5511999999999"
+target="_blank">
 
-<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
+</a>
+
+<div id="lightbox">
+<img src="">
+</div>
 
 <script>
-window.botpress.init({
-"botId":"shareable",
-"configuration":{
-"botName":"Assistente SSCariot",
-"botAvatar":"https://i.postimg.cc/3RhdH5sN/C314B943-92C1-41C2-918C-1029B8B4A014.png"
-},
-"clientId":"webchat",
-"selector":"body"
-})
+
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+
+const top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+
+});
+
+});
+
+const images=document.querySelectorAll(".gallery img, .machines img");
+const lightbox=document.getElementById("lightbox");
+const lightImg=lightbox.querySelector("img");
+
+images.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+lightImg.src=img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none";
+});
+
 </script>
+  <!-- IA ATENDIMENTO AUTOMÁTICO -->
+
+<div id="ai-chat">
+<iframe 
+src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json"
+width="380"
+height="600"
+style="border:none;border-radius:10px;">
+</iframe>
+</div>
+
+<style>
+#ai-chat{
+position:fixed;
+bottom:100px;
+right:25px;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+</style>
 
 </body>
 </html>
