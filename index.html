@@ -462,10 +462,7 @@ lightbox.style.display="none";
 
 <div id="ai-chat">
 <iframe 
-src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json"
-width="380"
-height="600"
-style="border:none;border-radius:10px;">
+src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json">
 </iframe>
 </div>
 
@@ -489,29 +486,34 @@ box-shadow:0 5px 20px rgba(0,0,0,0.5);
 z-index:9999;
 }
 
-<style>
-
 #ai-chat{
 position:fixed;
 bottom:170px;
-right:20px;
+right:25px;
+width:380px;
+height:600px;
+display:none;
 z-index:9999;
 box-shadow:0 10px 30px rgba(0,0,0,0.6);
-display:none;
 }
 
-/* Ajuste para celular */
+#ai-chat iframe{
+width:100%;
+height:100%;
+border:none;
+border-radius:10px;
+}
+
+/* AJUSTE PARA CELULAR */
+
 @media (max-width:600px){
 
 #ai-chat{
 right:10px;
 left:10px;
-bottom:120px;
-}
-
-#ai-chat iframe{
-width:100%;
+width:auto;
 height:70vh;
+bottom:120px;
 }
 
 }
@@ -525,15 +527,12 @@ const aiChat = document.getElementById("ai-chat");
 
 aiButton.onclick = () => {
 
-if(aiChat.style.display === "none"){
-aiChat.style.display = "block";
-}else{
+if(aiChat.style.display === "block"){
 aiChat.style.display = "none";
+}else{
+aiChat.style.display = "block";
 }
 
 }
 
 </script>
-
-</body>
-</html>
