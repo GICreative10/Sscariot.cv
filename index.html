@@ -295,14 +295,24 @@ color:#aaa;
 <h2>Sobre a Empresa</h2>
 
 <p style="max-width:800px;margin:auto;text-align:center">
-A SSCariot Comunicação Visual possui mais de 20 anos de experiência no mercado, oferecendo soluções completas em comunicação visual e impressão digital. Trabalhamos com máquinas de impressão de última geração, garantindo alta definição, cores vibrantes e acabamento profissional em cada projeto.
+A SSCariot Comunicação Visual possui mais de 20 anos de experiência no mercado, oferecendo soluções completas em comunicação visual e impressão digital. Trabalhamos com máquinas de impressão de última geração, garantindo alta definição, cores vibrantes e acabamento profissional em cada projeto. Nosso compromisso é transformar ideias em resultados visuais de alto impacto, sempre com qualidade, tecnologia e confiança.
 </p>
 
 </section>
 
+<!-- TODO SEU SITE CONTINUA EXATAMENTE IGUAL -->
+
 <footer>
 SSCariot Comunicação Visual © 2026
 </footer>
+
+<a class="whatsapp-float"
+href="https://wa.me/5511999999999"
+target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
+</a>
 
 <div id="lightbox">
 <img src="">
@@ -326,32 +336,35 @@ sec.classList.add("show");
 
 });
 
+const images=document.querySelectorAll(".gallery img, .machines img");
+const lightbox=document.getElementById("lightbox");
+const lightImg=lightbox.querySelector("img");
+
+images.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+lightImg.src=img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none";
+});
+
 </script>
 
-<!-- IA BOTPRESS (IGUAL AO OUTRO SITE) -->
+<!-- SUA IA BOTPRESS (ADICIONADA APENAS AQUI) -->
 
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 
 <script>
-
 window.botpressWebChat.init({
-
-"composerPlaceholder": "Digite sua mensagem...",
-"botConversationDescription": "Assistente Virtual SSCariot",
-"botId": "shareable",
-"hostUrl": "https://cdn.botpress.cloud/webchat/v1",
-"messagingUrl": "https://messaging.botpress.cloud",
-"clientId": "shareable",
-"webhookId": "shareable",
-"lazySocket": true,
-"themeName": "prism",
-"botName": "Assistente SSCariot",
-"avatarUrl": "https://i.postimg.cc/3RhdH5sN/C314B943-92C1-41C2-918C-1029B8B4A014.png",
-"stylesheet": "",
-"configUrl": "https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json"
-
+configUrl: "https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json"
 });
-
 </script>
 
 </body>
