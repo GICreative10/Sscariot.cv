@@ -369,7 +369,6 @@ A SSCariot Comunicação Visual possui mais de 20 anos de experiência no mercad
 
 <div class="gallery-item">
 <img src="https://i.postimg.cc/KzHg2gQG/91084935-255b-4fc8-92de-6884f6f90134.jpg">
-<p>Projeto Emagrecimento</p>
 <p>Projeto Emagrecentro</p>
 </div>
 
@@ -456,11 +455,24 @@ lightbox.style.display="none";
 
 </script>
 
-<!-- IA BOTPRESS -->
-<iframe 
-src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json"
-style="position:fixed; bottom:20px; right:20px; width:90px; height:90px; border:none; z-index:9999;">
-</iframe>
+<!-- IA DO SITE -->
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+
+<script>
+
+window.botpressWebChat.init({
+configUrl: "https://files.bpcontent.cloud/2026/03/06/04/20260306040339-NI8T281T.json",
+
+botName: "SSCariot IA",
+
+avatarUrl: "https://i.postimg.cc/59Rx4ZTf/49E6F975-307C-4338-9FAE-AAA8F07B3140.png",
+
+stylesheet: "https://cdn.botpress.cloud/webchat/v3.6/themes/default.css"
+
+});
+
+</script>
 
 </body>
 </html>
