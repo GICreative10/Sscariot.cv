@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SSCariot Comunicação Visual</title>
 
-<meta name="description" content="SSCariot Comunicação Visual - Impressão digital de alta tecnologia, lonas, adesivos, ACM, PVC, chapas de aço e outdoor.">
-
 <style>
-
-/* RESET */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,Arial;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
+background:#0a0a0a;
 color:white;
 overflow-x:hidden;
-background:#000;
 }
 
-/* FUNDO TECNOLÓGICO ANIMADO */
+/* NOVO FUNDO TECNOLÓGICO COM MÁQUINA */
 
-.bg{
+.tech-bg{
 position:fixed;
 width:100%;
 height:100%;
+z-index:-1;
 background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.85)),
 url("https://i.postimg.cc/ZRVmC1Qt/IMG-3089.jpg");
 background-size:cover;
 background-position:center;
-z-index:-1;
-animation:zoomBg 25s infinite alternate ease-in-out;
+animation:bgMove 30s ease-in-out infinite alternate;
 }
 
-@keyframes zoomBg{
+@keyframes bgMove{
 
 0%{
 transform:scale(1);
@@ -55,241 +53,242 @@ transform:scale(1.1);
 /* HEADER */
 
 header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(8px);
-padding:15px 40px;
-z-index:999;
+padding:30px;
+text-align:center;
+background:linear-gradient(90deg,#ff6a00,#ff8c00);
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav h1{
-color:#ff7a00;
-font-size:22px;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
-
-nav ul li a{
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:0.3s;
-}
-
-nav ul li a:hover{
-color:#ff7a00;
+header h1{
+font-size:36px;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
+height:90vh;
+background:url("https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0") center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
 }
 
 .hero h2{
-font-size:52px;
-max-width:900px;
+font-size:48px;
+background:rgba(0,0,0,0.6);
+padding:15px 30px;
+border-radius:10px;
 }
 
 .hero p{
 margin-top:20px;
 font-size:20px;
-opacity:0.9;
-max-width:700px;
+background:rgba(0,0,0,0.6);
+padding:10px 20px;
+border-radius:10px;
 }
-
-.btn{
-margin-top:35px;
-padding:16px 40px;
-background:linear-gradient(90deg,#ff7a00,#ff3c00);
-border:none;
-border-radius:8px;
-color:white;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 10px 35px rgba(255,120,0,0.6);
-}
-
-/* SECTIONS */
 
 section{
-padding:110px 25px;
+padding:100px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
 text-align:center;
-}
-
-section h2{
-font-size:38px;
-margin-bottom:20px;
-}
-
-section p{
-max-width:700px;
-margin:auto;
-opacity:0.85;
+margin-bottom:40px;
+color:#ff8c00;
+font-size:34px;
 }
 
 /* SERVIÇOS */
 
 .services{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:30px;
 }
 
 .card{
-width:260px;
-background:rgba(255,255,255,0.05);
+background:#1c1c1c;
 padding:30px;
-border-radius:12px;
-backdrop-filter:blur(10px);
-transition:0.3s;
+border-radius:10px;
+text-align:center;
+transition:0.4s;
 }
 
 .card:hover{
-background:rgba(255,120,0,0.25);
-transform:translateY(-8px);
+transform:translateY(-10px);
+background:#ff6a00;
 }
 
-.card h3{
-margin-bottom:10px;
-}
-
-/* MAQUINAS */
+/* MÁQUINAS */
 
 .machines{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .machines img{
 width:100%;
 border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.machines img:hover{
+transform:scale(1.05);
 }
 
 /* GALERIA */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:15px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .gallery img{
 width:100%;
-border-radius:8px;
+border-radius:10px;
+cursor:pointer;
 transition:0.3s;
 }
 
 .gallery img:hover{
-transform:scale(1.06);
+transform:scale(1.05);
 }
 
-/* ORÇAMENTO */
+/* LIGHTBOX */
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+/* CTA */
 
 .cta{
-background:linear-gradient(135deg,#ff7a00,#ff3c00);
-padding:90px 25px;
-margin-top:80px;
+background:
+linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
+url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789")
+center/cover;
+padding:120px 20px;
+text-align:center;
 }
 
 .cta h2{
-font-size:40px;
+font-size:42px;
+margin-bottom:20px;
+color:#ff8c00;
+}
+
+.cta p{
+font-size:20px;
+margin-bottom:35px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.btn-whatsapp{
+background:#25D366;
+color:white;
+padding:18px 45px;
+font-size:20px;
+font-weight:bold;
+border-radius:8px;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn-whatsapp:hover{
+transform:scale(1.08);
+}
+
+/* BOTÃO WHATSAPP FLUTUANTE */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+z-index:999;
 }
 
 /* FOOTER */
 
 footer{
 background:#000;
-padding:30px;
 text-align:center;
-opacity:0.8;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.hero h2{
-font-size:34px;
-}
-
-.services{
-flex-direction:column;
-align-items:center;
-}
-
+padding:30px;
+color:#aaa;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="bg"></div>
+<div class="tech-bg"></div>
 
 <header>
-
-<nav>
-
-<h1>SSCariot</h1>
-
-<ul>
-
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#tecnologia">Tecnologia</a></li>
-<li><a href="#galeria">Galeria</a></li>
-<li><a href="#contato">Orçamento</a></li>
-
-</ul>
-
-</nav>
-
+<h1>SSCariot Comunicação Visual</h1>
 </header>
 
-<div class="hero">
+<section class="hero">
+<h2>Impressão Digital Profissional</h2>
+<p>Alta tecnologia em comunicação visual e impressão digital.</p>
+</section>
 
-<h2>
-Impressão Digital de Alta Tecnologia
-</h2>
+<section>
 
-<p>
-Comunicação visual profissional com equipamentos de última geração para garantir qualidade máxima em cada projeto.
+<h2>Sobre a Empresa</h2>
+
+<p style="max-width:800px;margin:auto;text-align:center">
+
+A SSCariot Comunicação Visual trabalha com equipamentos de impressão digital de última geração,
+garantindo cores vibrantes, alta definição e máxima qualidade em lonas, adesivos,
+fachadas, placas e projetos completos de comunicação visual.
+
 </p>
 
-<a href="https://wa.me/5513996068418" class="btn">SOLICITAR ORÇAMENTO</a>
+</section>
 
-</div>
-
-
-<section id="servicos">
+<section>
 
 <h2>Nossos Serviços</h2>
 
@@ -297,99 +296,144 @@ Comunicação visual profissional com equipamentos de última geração para gar
 
 <div class="card">
 <h3>Lonas</h3>
-<p>Impressão em lona com alta durabilidade.</p>
+<p>Impressão de lonas em grande formato.</p>
 </div>
 
 <div class="card">
 <h3>Adesivos</h3>
-<p>Adesivos personalizados para empresas.</p>
+<p>Adesivos personalizados e recorte eletrônico.</p>
 </div>
 
 <div class="card">
 <h3>ACM</h3>
-<p>Painéis modernos para fachadas.</p>
+<p>Fachadas modernas em ACM.</p>
 </div>
 
 <div class="card">
 <h3>PVC</h3>
-<p>Placas resistentes para comunicação.</p>
+<p>Placas rígidas para comunicação visual.</p>
 </div>
 
 <div class="card">
 <h3>Chapas de Aço</h3>
-<p>Soluções industriais e comerciais.</p>
+<p>Estruturas e painéis metálicos.</p>
 </div>
 
 <div class="card">
 <h3>Outdoor</h3>
-<p>Grandes formatos para publicidade.</p>
+<p>Produção e instalação de outdoors.</p>
 </div>
 
 </div>
 
 </section>
 
-
-<section id="tecnologia">
+<section>
 
 <h2>Tecnologia de Impressão</h2>
 
-<p>
-Utilizamos equipamentos de impressão digital de última geração, garantindo alta resolução, cores vibrantes e máxima durabilidade nos materiais.
-</p>
-
 <div class="machines">
 
-<img src="https://images.unsplash.com/photo-1605745341112-85968b19335b">
-
-<img src="https://images.unsplash.com/photo-1598300188904-6287d52746d4">
+<img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
 
 </div>
 
 </section>
 
-
-<section id="galeria">
+<section>
 
 <h2>Galeria de Trabalhos</h2>
 
 <div class="gallery">
 
 <img src="https://i.postimg.cc/Fd0Kbz2n/0185f1a7-367e-45b3-8d37-41a49d3fec89.jpg">
-
 <img src="https://i.postimg.cc/KktY7j6F/2904cd52-7df1-4113-9094-3cfb200a7051.jpg">
-
 <img src="https://i.postimg.cc/bD1v0rKW/91084935-255b-4fc8-92de-6884f6f90134.jpg">
-
 <img src="https://i.postimg.cc/342wjNsM/bcfc94ea-ce71-4cff-8d34-5f9755f57dad.jpg">
-
 <img src="https://i.postimg.cc/1nDz0XkQ/de5cf9bf-b695-493f-9080-598fe676b739.jpg">
-
 <img src="https://i.postimg.cc/0M7NGjLh/e9e241b6-3193-4a10-92a2-8b26c7d57c91.jpg">
-
 <img src="https://i.postimg.cc/N9R08FWV/f2ba6e05-37cc-41f2-adf8-925386cbcfee.jpg">
 
 </div>
 
 </section>
 
+<section class="cta">
 
-<div class="cta" id="contato">
+<h2>Solicite Seu Orçamento</h2>
 
-<h2>Solicite seu orçamento agora</h2>
+<p>
+Entre em contato agora e receba um orçamento rápido
+para projetos de comunicação visual e impressão digital.
+</p>
 
-<p>Atendimento rápido e instalação profissional.</p>
+<a class="btn-whatsapp"
+href="https://wa.me/5511999999999"
+target="_blank">
 
-<a href="https://wa.me/5513996068418" class="btn">FALAR NO WHATSAPP</a>
+FALAR NO WHATSAPP
 
-</div>
+</a>
 
+</section>
 
 <footer>
 
-© 2026 SSCariot Comunicação Visual
+SSCariot Comunicação Visual © 2026
 
 </footer>
+
+<a class="whatsapp-float"
+href="https://wa.me/5511999999999"
+target="_blank">
+
+💬
+
+</a>
+
+<div id="lightbox">
+<img src="">
+</div>
+
+<script>
+
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+
+const top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+
+});
+
+});
+
+const images=document.querySelectorAll(".gallery img, .machines img");
+const lightbox=document.getElementById("lightbox");
+const lightImg=lightbox.querySelector("img");
+
+images.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+lightImg.src=img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none";
+});
+
+</script>
 
 </body>
 </html>
